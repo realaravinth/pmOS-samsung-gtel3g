@@ -14,8 +14,8 @@ options="!strip !check !tracedeps pmb:cross-native"
 makedepends="bash bc bison devicepkg-dev flex openssl-dev perl dtbtool-sprd linux-headers dtbtool"
 
 # Source
-_repository="kernel_samsung_gtel3g"
-_commit="bcbcb2c5e1b9f65d7a70168b2b357b17b633c3cd"
+_repository="SM-T561-gtel3g-kernel"
+_commit="138e4fdf85854bd9ba791ae05ad9bd036d8b64fd"
 _config="config-$_flavor.$arch"
 source="
 	$pkgname-$_commit.tar.gz::https://github.com/realaravinth/$_repository/archive/$_commit.tar.gz
@@ -50,7 +50,7 @@ package() {
 	install -Dm644 "$_outdir/arch/$_carch/boot"/dt.img "$pkgdir"/boot/dt.img
 }
 
-sha512sums="317eabf42737997a72cf0210b925ca2e96759949afed057ddc4b4e9c90b6cacdb4e7ff23c44fc89ef243c9f0da95154fcac59643b7e87c7407db4c7a10851326  linux-samsung-gtel3g-bcbcb2c5e1b9f65d7a70168b2b357b17b633c3cd.tar.gz
+sha512sums="46b60368a79483f4cc322934027b413cea602b70ca2fd5683913c2a350f03ed26acb409a33c39431cc83fc75500ffd35ce820bc6b1032cf6fce869221e059bba  linux-samsung-gtel3g-138e4fdf85854bd9ba791ae05ad9bd036d8b64fd.tar.gz
 9319b003bc41a3f9ad3f7793ca17da265df0d1c5ecfe665e38605eac57b31909d774fc9f38de79c3f9bb74124db0dd8baade0129bc8f9cc0b94c7073cda9e149  config-samsung-gtel3g.armv7
 77eba606a71eafb36c32e9c5fe5e77f5e4746caac292440d9fb720763d766074a964db1c12bc76fe583c5d1a5c864219c59941f5e53adad182dbc70bf2bc14a7  gcc7-give-up-on-ilog2-const-optimizations.patch
 197d40a214ada87fcb2dfc0ae4911704b9a93354b75179cd6b4aadbb627a37ec262cf516921c84a8b1806809b70a7b440cdc8310a4a55fca5d2c0baa988e3967  gcc8-fix-put-user.patch
