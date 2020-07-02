@@ -1,5 +1,5 @@
 # Reference: <https://postmarketos.org/vendorkernel>
-# Kernel config based on: arch/arm/configs/(CHANGEME!)
+# Kernel config based on: arch/arm/configs/gtel3g-dt_hw07_defconfig
 
 pkgname=linux-samsung-gtel3g
 pkgver=3.10.17
@@ -24,10 +24,9 @@ source="
 	gcc8-fix-put-user.patch
 	fix_recordmcount.patch
 	00_fix_return_address.patch
-	fix-dts.patch	
+	fix-dts.patch
 "
-#	kernel-use-the-gnu89-standard-explicitly.patch
-#"
+
 builddir="$srcdir/$_repository-$_commit"
 _outdir="out"
 
@@ -40,7 +39,6 @@ build() {
 	unset LDFLAGS
 	make O="$_outdir" ARCH="$_carch" CC="${CC:-gcc}" \
 		KBUILD_BUILD_VERSION="$((pkgrel + 1 ))-postmarketOS"
-	
 	dtbTool -s 2048 -p scripts/dtc/ -o "$_outdir/arch/$_carch/boot/"dt.img "$_outdir/arch/$_carch/boot/dts"
 }
 
